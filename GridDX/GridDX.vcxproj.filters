@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>5fd0e509-b6ae-4f29-bd2a-4d2cc10f3aa0</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{6721da69-3bc6-4aa6-804b-b6e0c5be2ce8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GridDX.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Direct3DContentProvider .cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="DDSTextureLoader.cpp" />
+    <ClCompile Include="GridMath.cpp" />
+    <ClCompile Include="Audio.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GridDX.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Direct3DContentProvider.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="DDSTextureLoader.h" />
+    <ClInclude Include="GridMath.h" />
+    <ClInclude Include="Audio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="QuadVertexShader.hlsl" />
+    <FxCompile Include="QuadPixelShader.hlsl" />
+    <FxCompile Include="SpritePixelShader.hlsl" />
+    <FxCompile Include="SpriteVertexShader.hlsl" />
+    <FxCompile Include="DebugVertexShader.hlsl" />
+    <FxCompile Include="DebugPixelShader.hlsl" />
+    <FxCompile Include="BloomVerticalPixelShader.hlsl" />
+    <FxCompile Include="BloomHorizontalPixelShader.hlsl" />
+    <FxCompile Include="GrainPixelShader.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\rect.DDS">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\clear.DDS">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

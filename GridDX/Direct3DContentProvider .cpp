@@ -1,0 +1,36 @@
+#include "Direct3DContentProvider.h"
+
+
+Direct3DContentProvider::Direct3DContentProvider(GridDX::Direct3DBackground^ controller) :
+    m_controller(controller)
+{
+    m_controller->RequestAdditionalFrame += ref new GridDX::RequestAdditionalFrameHandler([=]()
+    {
+        if (m_host)
+        {
+            m_host->RequestAdditionalFrame();
+        }
+    });
+}
+
+HRESULT Direct3DContentProvider::Connect(_In_ IDrawingSurfaceRuntimeHostNative* host, _In_ ID3D11Device1* device)
+{
+    m_host = host;
+    return m_controller->Connect(host, device);
+}
+
+void Direct3DContentProvider::Disconnect()
+{
+    m_controller->Disconnect();
+    m_host = nullptr;
+}
+
+HRESULT Direct3DContentProvider::PrepareResources(_In_ const LARGE_INTEGER* presentTargetTime, _Inout_ DrawingSurfaceSizeF* desiredRenderTargetSize)
+{
+    return m_controller->PrepareResources(presentTargetTime, desiredRenderTargetSize);
+}
+
+HRESULT Direct3DContentProvider::Draw(_In_ ID3D11Device1* device, _In_ ID3D11DeviceContext1* context, _In_ ID3D11RenderTargetView* renderTargetView)
+{
+    return m_controller->Draw(device, context, renderTargetView);
+}
